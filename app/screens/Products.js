@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
+import { useNetInfo } from "@react-native-community/netinfo";
 
+import ErrorIndicator from "../components/ErrorIndicator";
 import AppActivityIndicator from "../components/AppActivityIndicator";
 import products from "../api/products";
 import ProductItem from "../components/ProductItem";
 import Screen from "../components/Screen";
 import useApi from "../api/useApi";
-import ErrorIndicator from "../components/ErrorIndicator";
+import OfflineNotice from "../components/OfflineNotice";
 
 function Products() {
+  const netInfo = useNetInfo();
+
   const {
     data,
     error,
@@ -23,7 +27,11 @@ function Products() {
   return (
     <Screen style={styles.screen}>
       <AppActivityIndicator loading={loading} />
-      <ErrorIndicator error={error} load={loadProducts} />
+      <ErrorIndicator
+        error={error && netInfo.isInternetReachable === true}
+        load={loadProducts}
+      />
+      <OfflineNotice />
       <Text style={styles.products}>Products</Text>
       <FlatList
         data={data}
