@@ -9,6 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^11.3.2",
+    "apisauce": "^3.0.1",
     "expo": "~51.0.18",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
