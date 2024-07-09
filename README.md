@@ -30,4 +30,4 @@ View the virtualized demo on [appetize.io](https://appetize.io/app/b_qht4i2tlv4l
 
 Download the APK file to install the app on your Android device:
 
-[Download APK](https://github.com/your-username/your-repository/releases/download/v1.0/app.apk)
+[Download APK](https://drive.google.com/file/d/15EPNEiGdXQYCWx8uTO0rBwVJUEq6RvMo/view?usp=sharing)
